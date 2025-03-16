@@ -10,8 +10,5 @@
             "src": "/(.*)",
             "dest": "muhire_memoire/wsgi.py"
         }
-    ],
-    "scripts": {
-        "post-build": "python3.9 muhire_memoire/manage.py migrate"
-      }
+    ]
 }
