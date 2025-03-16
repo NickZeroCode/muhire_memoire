@@ -1,0 +1,78 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Monitoring des Cabines</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="{% static 'css/style_monitoring.css' %}">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">    
+  <link rel="stylesheet" href="">
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+      <div class="header" id="header-menu">Menu</div>
+      <ul>
+        <li><i>📈</i><a href="monitoring.html" style="text-decoration: none;color:white;">Dashboard</a></li>
+
+          {% if request.user.is_authenticated %}
+            <li><i>🔒</i><a href="#" style="text-decoration: none;color:white;">Déconnexion</a></li>
+          {% endif %}
+
+      <div class="sidebar-toggle" id="sidebar-toggle">❯</div>
+    </div>
+  
+    <!-- Header -->
+    <header id="header">
+      <h1>Système de Monitoring des Cabines Électriques</h1>
+    </header>
+  
+    <!-- Main Content -->
+    <div class="content" id="content">
+      <div class="total-power" id="total-power">
+        Puissance Cumulée : <h1 id="total-power-value">0MW</h1>
+      </div>
+  
+      <div class="critical-section" id="critical-section" style="display: none;">
+        <h2>Cabines à couper (<span id="nombre_couper"></span>)</h2>
+        <ul id="critical-list"></ul>
+      </div>
+  
+      <div class="section">
+        <h2>Cabines Prioritaires(Feeder Sud) <a href="#" class="btn btn-primary btn-sm">voir plus de cabines</a></h2>
+        <div class="cabine-list" id="prioritaires"></div>
+      </div>
+  
+      <div class="section">
+        <h2>Feeder S/Station <a href="feeder_station.html" class="btn btn-primary btn-sm">voir plus de cabines</a></h2>
+        <div class="cabine-list" id="feeder-1"></div>
+      </div>
+  
+      <div class="section">
+        <h2>Feeder Centre</h2>
+        <div class="cabine-list" id="feeder-2"></div>
+      </div>
+
+      <div class="section">
+        <h2>Feeder Route Sake</h2>
+        <div class="cabine-list" id="feeder-3"></div>
+      </div>
+  
+      <div id="chart-container">
+        <canvas id="chart"></canvas>
+      </div>
+    </div>
+  
+    <!-- Footer -->
+    <footer>
+      © 2025 Monitoring des Cabines
+    </footer>
+  
+    <!-- Script -->
+    <script src="{% static 'js/script_monitoring.js' %}"></script>
+  
+</body>
+</html>

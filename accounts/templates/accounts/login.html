@@ -1,0 +1,29 @@
+{% extends "layouts/base.html" %}
+{% load static%}
+
+  {% block title %}Connexion - Monitoring des Cabines Goma{% endblock %}
+  {% block login_style %}<link rel="stylesheet" href="{% static 'css/login.css' %}">{% endblock %}
+
+  {% block content %}
+    <div class="login-container">
+      <div class="login-box">
+        <h1>Connexion au système de monitoring des Cabines Goma</h1>
+        <form method="POST">
+          {% csrf_token %}
+          <div class="form-group">
+            <label for="username">Nom d'utilisateur</label>
+            <input type="text" id="username" name="username" placeholder="Entrez votre nom d'utilisateur" required>
+          </div>
+          <div class="form-group">
+            <label for="password">Mot de passe</label>
+            <input type="password" id="password" name="password" placeholder="Entrez votre mot de passe" required>
+          </div>
+          <div class="login-buttons">
+            <button type="submit" class="login">Se Connecter</button>
+          </div>
+        </form>
+        <div class="footer">
+        </div>
+      </div>
+    </div>
+  {% endblock %}
