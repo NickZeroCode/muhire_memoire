@@ -9,9 +9,7 @@ from django.contrib import messages
 
 def connexion_view(request):
     form = AuthenticationForm(request,data=request.POST)
-
     if request.method == "POST":
-
         if form.is_valid():
             user = form.get_user()
             login(request, user)
@@ -21,5 +19,9 @@ def connexion_view(request):
             messages.error(request,"Nom d'utilisateur ou mot de passe incorrect!")
 
     return render(request,'accounts/login.html')
+
+def logout_view(request):
+    logout(request)
+    return redirect("accounts:login")
 
         
