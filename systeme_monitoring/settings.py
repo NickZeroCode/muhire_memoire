@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 from pathlib import Path
 import os
 import tempfile
+from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -22,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-xo4j1g^fz99w=3k55xj=59-_f5m(-omz6sbf2+=iv*7=c3w9!9'
+SECRET_KEY = "django-insecure-xo4j1g^fz99w=3k55xj=59-_f5m(-omz6sbf2+=iv*7=c3w9!9"
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -85,9 +86,13 @@ WSGI_APPLICATION = 'systeme_monitoring.wsgi.application'
 # }
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(tempfile.gettempdir(), 'db.sqlite3'),
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "postgres",
+        "USER": "postgres.wpaepalmognwqycvcwea",
+        "PASSWORD": "@mukombozi2000",  # Replace with the actual password
+        "HOST": "aws-0-us-east-2.pooler.supabase.com",
+        "PORT": "6543",
     }
 }
 
@@ -139,3 +144,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+
+
+HOST_VARIABLE = "aws."
