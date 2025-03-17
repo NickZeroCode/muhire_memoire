@@ -1,6 +1,6 @@
 {
     "builds": [{
-        "src": "muhire_memoire/wsgi.py",
+        "src": "systeme_monitoring/wsgi.py",
         "use": "@vercel/python",
         "config": { "maxLambdaSize": "15mb", 
                     "runtime": "python3.9",
@@ -11,7 +11,7 @@
     "routes": [
         {
             "src": "/(.*)",
-            "dest": "muhire_memoire/wsgi.py"
+            "dest": "systeme_monitoring/wsgi.py"
         },
         {
             "src": "/static(.*)",
