@@ -12,14 +12,13 @@ def connexion_view(request):
 
     if request.method == "POST":
 
-        if form.is_valid():
-            user = form.get_user()
-            login(request, user)
+        if user_name == "benediction" and password == "muhire":
+            # user = form.get_user()
+            # login(request, user)
             return redirect("monitoring:tableau_de_bord")
 
         else:
             messages.error(request,"Nom d'utilisateur ou mot de passe incorrect!")
 
     return render(request,'accounts/login.html')
-
         
