@@ -1,0 +1,15 @@
+ <!-- Sidebar -->
+ <div class="sidebar" id="sidebar">
+    <div class="header" id="header-menu">Menu</div>
+    <ul class="list-unstyled">
+      <li><i>📈</i><a href="{% url 'monitoring:tableau_de_bord' %}" class="d-block py-2 sidebar_link">Dashboard</a></li>
+      <li><i>🔒</i><a href="{% url 'accounts:logout' %}" class="d-block py-2 sidebar_link">Déconnexion</a></li>
+      <li><i>⚙️</i><a href="{% url 'monitoring:settings' %}" class="d-block py-2 sidebar_link">Paramètres</a></li>
+    </ul>
+  </div>
+
+
+   <!-- Header -->
+   <header id="header">
+    <h1>Système de Monitoring des Cabines Électriques</h1>
+  </header>

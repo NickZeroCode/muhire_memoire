@@ -1,0 +1,57 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+
+{% block title %}settings{% endblock %}
+
+
+{% block custom_style %}
+  <link rel="stylesheet" href="{% static 'css/style_monitoring.css' %}">
+  <link rel="stylesheet" href="{% static 'css/setting_style.css' %}">
+{% endblock %}
+
+{% block sidebar_header %}
+  {% include 'includes/sidebar.html' %}
+  {% include 'includes/header.html' %}
+{% endblock %}
+
+
+{% block content %}
+
+    <!-- Main Content -->
+    <div class="content">
+        <div class="settings-container">
+            <div class="settings-header">
+            <h1>Paramètres du Système</h1>
+            <p class="text-muted">Modifiez les paramètres système pour personnaliser le fonctionnement.</p>
+            </div>
+
+            <!-- Display Current Threshold -->
+            <div class="current-threshold">
+            Puissance Seuil Actuelle : <span>{{ power_treshhold.puissance_seuil }} MW</span>
+            </div>
+
+            <!-- Form for updating puissance seuil -->
+            <form method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="power-threshold">Nouvelle Puissance Seuil (en MW)</label>
+                <input type="number" name="power_threshold" class="form-control" required>
+                <small class="form-text text-muted">La puissance seuil est le niveau critique utilisé pour le monitoring des cabines.</small>
+            </div>
+            <button type="submit" class="btn save-btn">Enregistrer</button>
+            </form>
+
+            <!-- Success or error message -->
+            {% if message %}
+            <div class="alert alert-success" role="alert">
+            {{ message }}
+            </div>
+            {% elif error %}
+            <div class="alert alert-danger" role="alert">
+            {{ error }}
+            </div>
+            {% endif %}
+        </div>
+    </div>
+
+{% endblock %}

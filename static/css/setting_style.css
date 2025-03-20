@@ -1,0 +1,51 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+}
+.settings-container {
+  max-width: 800px;
+  margin: 70px auto;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px 30px;
+}
+.settings-header {
+  border-bottom: 2px solid #dee2e6;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+}
+.settings-header h1 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #343a40;
+}
+.form-group {
+  margin-bottom: 20px;
+}
+.form-group label {
+  font-weight: 500;
+  color: #495057;
+}
+.form-control {
+  border-radius: 5px;
+  border: 1px solid #ced4da;
+}
+.save-btn {
+  background-color: #0d6efd;
+  color: white;
+  font-weight: bold;
+}
+.save-btn:hover {
+  background-color: #0b5ed7;
+}
+.alert {
+  font-size: 14px;
+  margin-top: 20px;
+}
+.current-threshold {
+  font-size: 16px;
+  font-weight: bold;
+  color: #198754;
+  margin-bottom: 15px;
+}

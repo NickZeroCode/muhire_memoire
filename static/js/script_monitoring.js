@@ -1,5 +1,5 @@
 
-      const powerThreshold = 15; // en MW
+      // const powerThreshold = 10; // en MW
   
       const cabines = [
         { id: 1, name: "Ex - Hop", power: 1, status: "on", priority: true, feeder: 0, nom_feeder:"Feeder Sud"},
@@ -159,7 +159,7 @@
   
       function updatePower() {
         cabines.forEach((cabine) => {
-            let randomNumber = Math.random() * 2;
+            let randomNumber = Math.random() * 1;
             let truncatedNumber = Math.floor(randomNumber * 100) / 100;
           cabine.power = truncatedNumber;  // Simuler une variation de puissance
         });
