@@ -28,7 +28,7 @@ SECRET_KEY = "django-insecure-xo4j1g^fz99w=3k55xj=59-_f5m(-omz6sbf2+=iv*7=c3w9!9
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['muhire-memoire.vercel.app']
+ALLOWED_HOSTS = ['muhire-memoire.vercel.app','localhost']
 
 
 # Application definition
@@ -144,8 +144,3 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-
-
-
-HOST_VARIABLE = "aws."
