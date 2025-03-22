@@ -35,7 +35,7 @@
             {% csrf_token %}
             <div class="form-group">
                 <label for="power-threshold">Nouvelle Puissance Seuil (en MW)</label>
-                <input type="number" name="power_threshold" class="form-control" required>
+                <input type="number" name="power_threshold" class="form-control" step='any' required>
                 <small class="form-text text-muted">La puissance seuil est le niveau critique utilisé pour le monitoring des cabines.</small>
             </div>
             <button type="submit" class="btn save-btn">Enregistrer</button>
