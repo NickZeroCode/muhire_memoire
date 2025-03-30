@@ -123,7 +123,7 @@ const cabines = [
   { id: 110, name: "Cabine Ihusi", power: 0.16, status: "on", priority: false, feeder: 3, nom_feeder: "Feeder Centre" },
 ];
 
-const feeder1 = document.getElementById("feeder-1");
+const feeder1 = document.getElementById("feeder-5");
 const totalPowerElement = document.getElementById("total-power-value");
 const criticalSection = document.getElementById("critical-section");
 const criticalList = document.getElementById("critical-list");
@@ -152,21 +152,21 @@ function renderCabines() {
     if (adjustedPower > powerThreshold) {
       if (cabine.power != 0){
           {
-           if (cabine.feeder === 1) {
+           if (cabine.feeder === 5) {
               cabine.status = "on";
               clignotantes.push(cabine);
            }
           }
 
       }else{
-          if (cabine.feeder === 1) {
+          if (cabine.feeder === 5) {
               cabine.status = "off";
               normales.push(cabine);
           }
           }
       adjustedPower -= cabine.power;  // Réduire la puissance
     } else {
-      if (cabine.feeder === 1) {
+      if (cabine.feeder === 5) {
           normales.push(cabine);
       }
     }

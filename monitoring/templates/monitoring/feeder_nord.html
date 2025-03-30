@@ -1,0 +1,52 @@
+{% load static %}   
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Monitoring des Cabines</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="{% static 'css/style_monitoring.css' %}">
+</head>
+<body>
+    <!-- Sidebar -->
+    {% include 'includes/sidebar.html' %}
+  
+    <!-- Header -->
+    <header id="header">
+      <h1>Système de Monitoring des Cabines Électriques</h1>
+    </header>
+  
+    <!-- Main Content -->
+    <div class="content" id="content">
+      <h1 style="text-align: center;">Feeder Nord</h1>
+
+      <div class="total-power" id="total-power">
+        Puissance Cumulée : <h1 id="total-power-value">0MW</h1>
+      </div>
+  
+      <div class="critical-section" id="critical-section" style="display: none;">
+        <h2>Cabines à couper (<span id="nombre_couper"></span>)</h2>
+        <ul id="critical-list"></ul>
+      </div>
+  
+      <div class="section">
+        <h2>Feeder Nord</h2>
+        <div class="cabine-list" id="feeder-2"></div>
+      </div>
+    </div>
+  
+    <!-- Footer -->
+    <footer>
+      © 2025 Monitoring des Cabines
+    </footer>
+
+    <script>
+      const powerThreshold = {{ my_settings.puissance_seuil }}; // en MW
+    </script>
+  
+    <!-- Script -->
+    <script src="{% static 'js/scripts_feeder_nord.js' %}"></script>
+  
+</body>
+</html>

@@ -27,23 +27,28 @@
       </div>
   
       <div class="section">
-        <h2>Cabines Prioritaires(Feeder Sud) <a href="#" class="btn btn-primary btn-sm">voir plus de cabines</a></h2>
+        <h2>Cabines Prioritaires(Feeder Sud) <a href="{% url 'monitoring:feeder_sud' %}" class="btn btn-primary btn-sm">voir plus de cabines</a></h2>
         <div class="cabine-list" id="prioritaires"></div>
       </div>
   
       <div class="section">
-        <h2>Feeder S/Station <a href="feeder_station.html" class="btn btn-primary btn-sm">voir plus de cabines</a></h2>
+        <h2>Feeder S/Station <a href="{% url 'monitoring:feeder_station' %}" class="btn btn-primary btn-sm">voir plus de cabines</a></h2>
         <div class="cabine-list" id="feeder-1"></div>
       </div>
   
       <div class="section">
-        <h2>Feeder Centre</h2>
+        <h2>Feeder Nord  <a href="{% url 'monitoring:feeder_nord' %}" class="btn btn-primary btn-sm">voir plus de cabines</a> </h2>
         <div class="cabine-list" id="feeder-2"></div>
       </div>
 
       <div class="section">
-        <h2>Feeder Route Sake</h2>
+        <h2>Feeder Centre  <a href="{% url 'monitoring:feeder_centre' %}" class="btn btn-primary btn-sm">voir plus de cabines</a></h2>
         <div class="cabine-list" id="feeder-3"></div>
+      </div>
+
+      <div class="section">
+        <h2>Feeder Route Sake  <a href="{% url 'monitoring:feeder_route_sake' %}" class="btn btn-primary btn-sm">voir plus de cabines</a></h2>
+        <div class="cabine-list" id="feeder-5"></div>
       </div>
   
       <div id="chart-container">
@@ -56,7 +61,8 @@
 {% block my_script %} 
 
     <script>
-      const powerThreshold = {{ power_treshhold.puissance_seuil }}; // en MW
+      const powerThreshold = {{ my_settings.puissance_seuil }}; // en MW
+      const maxCabineSection = {{ my_settings.nombre_cabines }};
     </script>
 
     <!-- Script -->

@@ -27,7 +27,7 @@
 
             <!-- Display Current Threshold -->
             <div class="current-threshold">
-            Puissance Seuil Actuelle : <span>{{ power_treshhold.puissance_seuil }} MW</span>
+            Puissance Seuil Actuelle : <span>{{ my_settings.puissance_seuil }} MW</span>
             </div>
 
             <!-- Form for updating puissance seuil -->
@@ -35,11 +35,28 @@
             {% csrf_token %}
             <div class="form-group">
                 <label for="power-threshold">Nouvelle Puissance Seuil (en MW)</label>
-                <input type="number" name="power_threshold" class="form-control" step='any' required>
+                <input type="number" name="power_threshold" class="form-control form-control-sm" step='any' required>
                 <small class="form-text text-muted">La puissance seuil est le niveau critique utilisé pour le monitoring des cabines.</small>
             </div>
-            <button type="submit" class="btn save-btn">Enregistrer</button>
+            <button type="submit" class="btn save-btn btn-sm" name="puissance_seuille">Enregistrer</button>
             </form>
+
+            <hr/>
+             <!-- Display Current Threshold -->
+            <div class="current-threshold">
+              Nombre de cabine par feeder : <span>{{ my_settings.nombre_cabines }} MW</span>
+            </div>
+
+            <!-- Form for updating cabines par section -->
+            <form method="POST">
+              {% csrf_token %}
+              <div class="form-group">
+                  <label for="power-threshold">Nombre de cabines par feeder</label>
+                  <input type="number" name="nombre_cabines" class="form-control form-control-sm" required>
+                  <small class="form-text text-muted">Le nombre de cabines à afficher sur le tableau de bord pour chaque feeder.</small>
+              </div>
+              <button type="submit" class="btn save-btn btn-sm" name="nombre_cabine">Enregistrer</button>
+              </form>
 
             <!-- Success or error message -->
             {% if message %}
